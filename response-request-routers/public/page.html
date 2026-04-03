@@ -8,7 +8,7 @@
 <body>
     <script>
         async function testPost() {
-            let a = await fetch("/",{method:"post"})
+            let a = await fetch("/",{method:"delete"})
             let b = await a.text()
             console.log(b)
         }
