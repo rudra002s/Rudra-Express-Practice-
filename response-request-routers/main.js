@@ -26,17 +26,24 @@ app.use(express.static("public"))
 
 //this can also be clubbed as a single like given below
 app.get('/', (req, res) => {
-    console.log("get request")
+  console.log("get request")
   res.send('Hello World. Hows life?!')
 }).post('/', (req, res) => {
-    console.log("post request")
+  console.log("post request")
   res.send('Hello World post!')
 }).put('/', (req, res) => {
-    console.log("put request")
+  console.log("put request")
   res.send('Hello World put!')
 }).delete('/', (req, res) => {
-    console.log("delete request")
+  console.log("delete request")
   res.send('Hello World delete!')
+})
+
+app.get("/index", (req, res) => {
+  console.log("hello index")
+  // THIS GAVE US HELLO WORLD WHEN PAGE WAS LOAD res.send('Hello World !')
+  //to get the whole page we will do and also we need to specify the root
+  res.sendFile('templates/index.html',{root:__dirname})
 })
 
 app.listen(port, () => {
