@@ -1,8 +1,10 @@
 const express = require('express')
+const blog = require('./routes/blog')
 const app = express()
 const port = 3000
 
 app.use(express.static("public"))
+app.use('/blog', blog)
 
 // app.get('/', (req, res) => {
 //     console.log("get request")
@@ -27,7 +29,7 @@ app.use(express.static("public"))
 //this can also be clubbed as a single like given below
 app.get('/', (req, res) => {
   console.log("get request")
-  res.send('Hello World. Hows life?!')
+  res.send('Hello World. Hows life?! I am fine Thank you')
 }).post('/', (req, res) => {
   console.log("post request")
   res.send('Hello World post!')
@@ -43,7 +45,11 @@ app.get("/index", (req, res) => {
   console.log("hello index")
   // THIS GAVE US HELLO WORLD WHEN PAGE WAS LOAD res.send('Hello World !')
   //to get the whole page we will do and also we need to specify the root
-  res.sendFile('templates/index.html',{root:__dirname})
+  res.sendFile('templates/index.html', { root: __dirname })
+})
+
+app.get("/api", (req, res) => {
+  res.json({ a: 1, b: 2, c: 3, d: 4,})
 })
 
 app.listen(port, () => {
