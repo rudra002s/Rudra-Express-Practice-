@@ -30,6 +30,7 @@ app.use((req, res, next) => {
 //MIDDLEWARE 2
 app.use((req, res, next) => {
     console.log('m2')
+    req.rudra=" Ritu is smart too"
     next()
 })
 app.get('/', (req, res) => {
