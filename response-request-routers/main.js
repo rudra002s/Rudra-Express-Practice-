@@ -49,7 +49,7 @@ app.get("/index", (req, res) => {
 })
 
 app.get("/api", (req, res) => {
-  res.json({ a: 1, b: 2, c: 3, d: 4,})
+  res.json({ a: 1, b: 2, c: 3, d: 4, })
 })
 
 app.listen(port, () => {

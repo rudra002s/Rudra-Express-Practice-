@@ -24,10 +24,10 @@ app.get('/blog', (req, res) => {
 
 //here slug is a parameter
 app.get('/blog/:slug', (req, res) => {
-    //logic to fetch {slug} from the database
-    //for URL: http://localhost:3000/blog/intro-to-c?mode=dark&region=in
-    console.log(req.params) //will give { slug: 'intro-to-c' } this as output
-    console.log(req.query) //will give { mode: 'dark', region: 'in' } this as output
+  //logic to fetch {slug} from the database
+  //for URL: http://localhost:3000/blog/intro-to-c?mode=dark&region=in
+  console.log(req.params) //will give { slug: 'intro-to-c' } this as output
+  console.log(req.query) //will give { mode: 'dark', region: 'in' } this as output
   res.send(`hello ${req.params.slug}`)
 })
 
